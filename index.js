@@ -18,7 +18,16 @@ const htmlColor = [
     "SpringGreen", "SteelBlue", "Tan", "Teal", "Thistle", "Tomato", "Turquoise", "Violet", "Wheat", "White", "WhiteSmoke", "Yellow", "YellowGreen"
   ];
 
-  const isHtmlColor = (color) => htmlColor.includes(color.toLowerCase());
+const isValidHexColor = (hex) => /^#([0-9A-F]{3}|[0-9A-F]{6})$/i.test(hex);
+const isHtmlColor = (color) => htmlColor.includes(color.toLowerCase());
+
+const validateColorInput = (color) => {
+    if (isHtmlColor(color) || isValidHexColor(color)) {
+      return true;
+    } else {
+      return "Invalid color input. Please enter a valid HTML color name or hex value.";
+    }
+  };
   
 function UserQuestions() {
     return [
@@ -30,7 +39,8 @@ function UserQuestions() {
     {
         type: 'input',
         name: 'textColor',
-        message: "What color do you want the text to be?"
+        message: "What color do you want the text to be?",
+        validate: validateColorInput
     },
     {
         type: 'list',
@@ -41,7 +51,8 @@ function UserQuestions() {
     {
         type: 'input',
         name: 'shapeColor',
-        message: "What color do you want the shape to be?"
+        message: "What color do you want the shape to be?",
+        validate: validateColorInput
     },
     ]
 }
