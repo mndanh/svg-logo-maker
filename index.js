@@ -28,6 +28,13 @@ const validateColorInput = (color) => {
       return "Invalid color input. Please enter a valid HTML color name or hex value.";
     }
   };
+
+  const validateTextInput = (input) => {
+    if(input.length > 3) {
+        return "Text input must be no more than 3 characters.";
+    }
+    return true;
+  };
   
 function UserQuestions() {
     return [
@@ -35,6 +42,7 @@ function UserQuestions() {
         type: 'input',
         name: 'text',
         message: "Enter 3 characters to add text to your logo.",
+        validate: validateTextInput
     },
     {
         type: 'input',
@@ -55,4 +63,6 @@ function UserQuestions() {
         validate: validateColorInput
     },
     ]
-}
+};
+
+// not going to create async await function until i've finished shapes.js
