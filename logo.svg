@@ -1,8 +1,8 @@
 
         <html>
             <svg width="300" height="300" viewBox="0 0 300 300">
-                <circle cx="150" cy="150" r="100" fill="undefined" />
-            <text fill="undefined" x="150" y="150" font-size="30" text-anchor="middle" alignment-baseline="middle">dan</text>
+                <circle cx="150" cy="150" r="100" fill="blue" />
+                <text fill="gray" x="150" y="150" font-size="30" text-anchor="middle" alignment-baseline="middle">gIt</text>
             </svg>
         </html>
         

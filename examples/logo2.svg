@@ -1,0 +1,6 @@
+
+            <svg width="300" height="300" viewBox="0 0 300 300">
+                <polygon points="150,25 275,275 25,275" fill="black" />
+                <text fill="#ffffff" x="150" y="180" font-size="30" text-anchor="middle" alignment-baseline="middle">FFF</text>
+            </svg>
+        

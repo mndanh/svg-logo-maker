@@ -72,18 +72,18 @@ async function init() {
     const replies = await inquirer.prompt(questions);
     let shape;
     if (replies.shape === "Circle") {
-        shape = new Circle(replies.text, replies.textcolor, replies.shapecolor);
+        shape = new Circle(replies.text, replies.textColor, replies.shapeColor);
     } else if (replies.shape === "Square") {
-        shape = new Square(replies.text, replies.textcolor, replies.shapecolor);
+        shape = new Square(replies.text, replies.textColor, replies.shapeColor);
     } else if (replies.shape === "Triangle") {
-        shape = new Triangle(replies.text, replies.textcolor, replies.shapecolor);
+        shape = new Triangle(replies.text, replies.textColor, replies.shapeColor);
     }
-    const outputSVG = shape.printImg();
+    const outputSVG = shape.render();
     fs.writeFile('logo.svg', outputSVG, (err) => {
         if (err) {
             console.error("Could not generate SVG");
         } else {
-            console.log("SVG generated");
+            console.log("Generated logo.svg");
         }
     });
 }
